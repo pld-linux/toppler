@@ -13,6 +13,7 @@ BuildRequires:	automake
 BuildRequires:	SDL-devel >= 1.2
 BuildRequires:	SDL_mixer-devel >= 1.2
 BuildRequires:	gettext-devel
+BuildRequires:	libstdc++-devel
 BuildRequires:	zlib-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
