@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=Toppler
+Comment='Jump and run' game
+Comment[pl]=Gra z rodzaju 'skacz i biegnij'
+Icon=toppler.xpm
+Exec=toppler
+Terminal=false
+Type=Application
+Categories=Application;Game;ArcadeGame;
+Encoding=UTF-8
+# vi: encoding=utf-8
