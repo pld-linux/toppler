@@ -9,6 +9,7 @@ Source0:	http://dl.sourceforge.net/toppler/%{name}-%{version}.tar.gz
 # Source0-md5:	c6a118a70efa8fa55f0a3b5d1166a8da
 Source1:	%{name}.desktop
 URL:		http://toppler.sourceforge.net/
+BuildRequires:	automake
 BuildRequires:	SDL-devel >= 1.2
 BuildRequires:	SDL_mixer-devel >= 1.2
 BuildRequires:	gettext-devel
@@ -37,6 +38,7 @@ siê na ekranie, tak wiêc widoczne jest tylko 180°.
 %setup -q
 
 %build
+cp -f /usr/share/automake/config.sub .
 %configure
 %{__make}
 
