@@ -1,12 +1,12 @@
 Summary:	'Jump and run' game
 Summary(pl):	Gra z rodzaju 'skacz i biegnij'
 Name:		toppler
-Version:	1.0.4
+Version:	1.0.5
 Release:	1
 License:	GPL
 Group:		X11/Applications/Games
 Source0:	http://dl.sourceforge.net/toppler/%{name}-%{version}.tar.gz
-# Source0-md5:	086326a22d6ed7874fde9fcac71fa1db
+# Source0-md5:	cc5feab9a53200849df6288aa02454c0
 Source1:	%{name}.desktop
 URL:		http://toppler.sourceforge.net/
 BuildRequires:	SDL-devel >= 1.2
