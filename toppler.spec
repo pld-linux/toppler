@@ -1,30 +1,38 @@
 Summary:	'Jump and run' game
-Summary(pl):	Gra w stylu 'skacz i biegnij'
+Summary(pl):	Gra z rodzaju 'skacz i biegnij'
 Name:		toppler
 Version:	1.0.4
-Release:	0.1
+Release:	1
 License:	GPL
 Group:		X11/Applications/Games
 Source0:	http://dl.sourceforge.net/toppler/%{name}-%{version}.tar.gz
 # Source0-md5:	086326a22d6ed7874fde9fcac71fa1db
-#Source1:	%{name}.desktop
+Source1:	%{name}.desktop
 URL:		http://toppler.sourceforge.net/
-BuildRequires:  SDL-devel >= 1.2
-BuildRequires:  SDL_mixer-devel >= 1.2
+BuildRequires:	SDL-devel >= 1.2
+BuildRequires:	SDL_mixer-devel >= 1.2
 BuildRequires:	gettext-devel
 BuildRequires:	zlib-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-In this game you have to help a cute little green animal switch off
-some kind of "evil" mechanism. The "power off switch" is hidden
-somewhere in high towers. On your way to the target you need to avoid
-a lot of strange robots that guard the tower. That sounds all like a
-normal jump and run game. What makes this game different is that you
-walk arond the tower which is revolving on the screen, so that you
-only see the 180° that are currently visible.
+In this game player helps a cute little green animal switch off some
+kind of "evil" mechanism. The "power off switch" is hidden somewhere
+in high towers. On his way to the target he needs to avoid a lot of
+strange robots that guard the tower. That sounds all like a normal
+jump and run game. What makes this game different is that you walk
+arond the tower which is revolving on the screen, so that you only see
+the 180° that are currently visible.
 
 %description -l pl
+W tej grze gracz pomaga ma³emu, sprytnemu, zielonemu zwierz±tku
+wy³±czyæ pewnego rodzaju "diabelskie" mechanizmy. "Wy³±cznik si³y"
+jest ukryty gdzie¶ w wyskokiej wie¿y. Na jego drodze do celu musi
+unikaæ wielu dziwnych robotów które strzeg± wie¿y. Wszystko to brzmi
+jak zwyk³a gra z rodzaju "skacz i biegnij". To czym ró¿ni siê ta gra
+od innych tego typu jest to, ¿e spacerujesz wokó³ wie¿y, która obraca
+siê na ekranie, tak wiêc wioczne jest tylko 180°.
+
 
 %prep
 %setup -q
@@ -35,9 +43,15 @@ only see the 180° that are currently visible.
 
 %install
 rm -rf $RPM_BUILD_ROOT
+install -d $RPM_BUILD_ROOT{%{_desktopdir},%{_pixmapsdir}}
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
+
+mv -f $RPM_BUILD_ROOT%{_datadir}/%{name}/%{name}.xpm \
+	$RPM_BUILD_ROOT%{_pixmapsdir}
+
+install %{SOURCE1} $RPM_BUILD_ROOT%{_desktopdir}
 
 %find_lang %{name}
 
@@ -46,7 +60,9 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
-%doc AUTHORS ChangeLog README 
+%doc AUTHORS ChangeLog README
 %attr(755,root,root) %{_bindir}/*
 %{_datadir}/%{name}
+%{_desktopdir}/%{name}.desktop
 %{_mandir}/man6/%{name}.6*
+%{_pixmapsdir}/%{name}.xpm
