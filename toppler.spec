@@ -27,12 +27,11 @@ the 180° that are currently visible.
 %description -l pl
 W tej grze gracz pomaga ma³emu, sprytnemu, zielonemu zwierz±tku
 wy³±czyæ pewnego rodzaju "diabelskie" mechanizmy. "Wy³±cznik si³y"
-jest ukryty gdzie¶ w wyskokiej wie¿y. Na jego drodze do celu musi
+jest ukryty gdzie¶ w wysokiej wie¿y. Na jego drodze do celu musi
 unikaæ wielu dziwnych robotów które strzeg± wie¿y. Wszystko to brzmi
 jak zwyk³a gra z rodzaju "skacz i biegnij". To czym ró¿ni siê ta gra
 od innych tego typu jest to, ¿e spacerujesz wokó³ wie¿y, która obraca
-siê na ekranie, tak wiêc wioczne jest tylko 180°.
-
+siê na ekranie, tak wiêc widoczne jest tylko 180°.
 
 %prep
 %setup -q
