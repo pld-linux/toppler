@@ -5,13 +5,13 @@ Version:	1.1.1
 Release:	1
 License:	GPL
 Group:		X11/Applications/Games
-Source0:	http://osdn.dl.sourceforge.net/toppler/%{name}-%{version}.tar.gz
+Source0:	http://dl.sourceforge.net/toppler/%{name}-%{version}.tar.gz
 # Source0-md5:	913fe90fcb15f3d6a12d5194a0db2b7d
 Source1:	%{name}.desktop
 URL:		http://toppler.sourceforge.net/
-BuildRequires:	automake
 BuildRequires:	SDL-devel >= 1.2
 BuildRequires:	SDL_mixer-devel >= 1.2
+BuildRequires:	automake
 BuildRequires:	gettext-devel
 BuildRequires:	libstdc++-devel
 BuildRequires:	zlib-devel
