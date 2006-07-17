@@ -12,11 +12,14 @@ Source1:	%{name}.desktop
 URL:		http://toppler.sourceforge.net/
 BuildRequires:	SDL-devel >= 1.2
 BuildRequires:	SDL_mixer-devel >= 1.2
+BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
-BuildRequires:	gettext-devel
+BuildRequires:	gettext-devel >= 0.11.5
 BuildRequires:	libstdc++-devel
 BuildRequires:	zlib-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+
+%define		_localstatedir	/var/games
 
 %description
 In this game player helps a cute little green animal switch off some
@@ -40,14 +43,11 @@ siê na ekranie, tak wiêc widoczne jest tylko 180°.
 %setup -q
 
 %build
-%{__intltoolize}
 %{__gettextize}
-%{__libtoolize}
 %{__aclocal}
 %{__autoconf}
 %{__autoheader}
 %{__automake}
-cp -f /usr/share/automake/config.sub .
 %configure
 %{__make}
 
@@ -68,9 +68,10 @@ rm -rf $RPM_BUILD_ROOT
 %files -f %{name}.lang
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README
-%attr(755,root,root) %{_bindir}/*
+%attr(2755,root,games) %{_bindir}/*
 %{_datadir}/%{name}
 %{_desktopdir}/%{name}.desktop
 %{_mandir}/man6/%{name}.6*
 %{_pixmapsdir}/%{name}.xpm
-%{_var}/%{name}/%{name}.hsc
+%dir %{_var}/games/%{name}
+%attr(664,root,games) %{_var}/games/%{name}/%{name}.hsc
