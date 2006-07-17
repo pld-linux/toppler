@@ -1,13 +1,14 @@
+%define		_alfa	a
 Summary:	'Jump and run' game
 Summary(pl):	Gra z rodzaju 'skacz i biegnij'
 Name:		toppler
-Version:	1.1.1
-Release:	1
+Version:	1.1.2
+Release:	0.%{_alfa}.1
 License:	GPL
 Group:		X11/Applications/Games
-Source0:	http://dl.sourceforge.net/toppler/%{name}-%{version}.tar.gz
-# Source0-md5:	913fe90fcb15f3d6a12d5194a0db2b7d
+Source0:	http://dl.sourceforge.net/toppler/%{name}-%{version}%{_alfa}.tar.gz
 Source1:	%{name}.desktop
+# Source0-md5:	7950bf692e4cb3e78a4fd486f375fcd2
 URL:		http://toppler.sourceforge.net/
 BuildRequires:	SDL-devel >= 1.2
 BuildRequires:	SDL_mixer-devel >= 1.2
@@ -39,6 +40,13 @@ siê na ekranie, tak wiêc widoczne jest tylko 180°.
 %setup -q
 
 %build
+%{__intltoolize}
+%{__gettextize}
+%{__libtoolize}
+%{__aclocal}
+%{__autoconf}
+%{__autoheader}
+%{__automake}
 cp -f /usr/share/automake/config.sub .
 %configure
 %{__make}
@@ -50,9 +58,6 @@ install -d $RPM_BUILD_ROOT{%{_desktopdir},%{_pixmapsdir}}
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-mv -f $RPM_BUILD_ROOT%{_datadir}/%{name}/%{name}.xpm \
-	$RPM_BUILD_ROOT%{_pixmapsdir}
-
 install %{SOURCE1} $RPM_BUILD_ROOT%{_desktopdir}
 
 %find_lang %{name}
@@ -62,9 +67,10 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
-%doc AUTHORS ChangeLog README
+%doc AUTHORS ChangeLog NEWS README
 %attr(755,root,root) %{_bindir}/*
 %{_datadir}/%{name}
 %{_desktopdir}/%{name}.desktop
 %{_mandir}/man6/%{name}.6*
 %{_pixmapsdir}/%{name}.xpm
+%{_var}/%{name}/%{name}.hsc
