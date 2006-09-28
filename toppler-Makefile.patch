@@ -1,0 +1,10 @@
+--- toppler-1.1.2/Makefile.am~	2005-10-03 19:59:37.000000000 +0200
++++ toppler-1.1.2/Makefile.am	2006-09-28 18:50:02.000000000 +0200
+@@ -37,7 +37,6 @@
+ dist_pixmaps_DATA = $(PACKAGE).xpm
+ applications_DATA = $(PACKAGE).desktop
+ dist_man_MANS = toppler.6
+-dist_pkgdoc_DATA = AUTHORS COPYING ChangeLog NEWS README
+ dist_pkgdata_DATA = \
+   toppler.dat \
+   m1.ttm m2.ttm ball1.ttm ball2.ttm ball3.ttm abc.ttm pasi2.ttm
