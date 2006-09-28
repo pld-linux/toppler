@@ -9,6 +9,7 @@ Group:		X11/Applications/Games
 Source0:	http://dl.sourceforge.net/toppler/%{name}-%{version}%{_alfa}.tar.gz
 Source1:	%{name}.desktop
 # Source0-md5:	7950bf692e4cb3e78a4fd486f375fcd2
+Patch0:		%{name}-Makefile.patch
 URL:		http://toppler.sourceforge.net/
 BuildRequires:	SDL-devel >= 1.2
 BuildRequires:	SDL_mixer-devel >= 1.2
@@ -41,6 +42,7 @@ siê na ekranie, tak wiêc widoczne jest tylko 180°.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 %{__gettextize}
