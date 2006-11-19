@@ -1,12 +1,11 @@
-%define		_alfa	a
 Summary:	'Jump and run' game
 Summary(pl):	Gra z rodzaju 'skacz i biegnij'
 Name:		toppler
-Version:	1.1.2
-Release:	0.%{_alfa}.1
-License:	GPL
+Version:	1.1.2a
+Release:	1
+License:	GPL v2+
 Group:		X11/Applications/Games
-Source0:	http://dl.sourceforge.net/toppler/%{name}-%{version}%{_alfa}.tar.gz
+Source0:	http://dl.sourceforge.net/toppler/%{name}-%{version}.tar.gz
 Source1:	%{name}.desktop
 # Source0-md5:	7950bf692e4cb3e78a4fd486f375fcd2
 Patch0:		%{name}-Makefile.patch
@@ -41,7 +40,7 @@ od innych tego typu jest to, ¿e spacerujesz wokó³ wie¿y, która obraca
 siê na ekranie, tak wiêc widoczne jest tylko 180°.
 
 %prep
-%setup -q
+%setup -q -n %{name}-1.1.2
 %patch0 -p1
 
 %build
