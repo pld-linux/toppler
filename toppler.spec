@@ -1,5 +1,5 @@
 Summary:	'Jump and run' game
-Summary(pl):	Gra z rodzaju 'skacz i biegnij'
+Summary(pl.UTF-8):   Gra z rodzaju 'skacz i biegnij'
 Name:		toppler
 Version:	1.1.2a
 Release:	1
@@ -28,16 +28,16 @@ in high towers. On his way to the target he needs to avoid a lot of
 strange robots that guard the tower. That sounds all like a normal
 jump and run game. What makes this game different is that you walk
 arond the tower which is revolving on the screen, so that you only see
-the 180° that are currently visible.
+the 180Â° that are currently visible.
 
-%description -l pl
-W tej grze gracz pomaga ma³emu, sprytnemu, zielonemu zwierz±tku
-wy³±czyæ pewnego rodzaju "diabelskie" mechanizmy. "Wy³±cznik si³y"
-jest ukryty gdzie¶ w wysokiej wie¿y. Na jego drodze do celu musi
-unikaæ wielu dziwnych robotów które strzeg± wie¿y. Wszystko to brzmi
-jak zwyk³a gra z rodzaju "skacz i biegnij". To czym ró¿ni siê ta gra
-od innych tego typu jest to, ¿e spacerujesz wokó³ wie¿y, która obraca
-siê na ekranie, tak wiêc widoczne jest tylko 180°.
+%description -l pl.UTF-8
+W tej grze gracz pomaga maÅ‚emu, sprytnemu, zielonemu zwierzÄ…tku
+wyÅ‚Ä…czyÄ‡ pewnego rodzaju "diabelskie" mechanizmy. "WyÅ‚Ä…cznik siÅ‚y"
+jest ukryty gdzieÅ› w wysokiej wieÅ¼y. Na jego drodze do celu musi
+unikaÄ‡ wielu dziwnych robotÃ³w ktÃ³re strzegÄ… wieÅ¼y. Wszystko to brzmi
+jak zwykÅ‚a gra z rodzaju "skacz i biegnij". To czym rÃ³Å¼ni siÄ™ ta gra
+od innych tego typu jest to, Å¼e spacerujesz wokÃ³Å‚ wieÅ¼y, ktÃ³ra obraca
+siÄ™ na ekranie, tak wiÄ™c widoczne jest tylko 180Â°.
 
 %prep
 %setup -q -n %{name}-1.1.2
