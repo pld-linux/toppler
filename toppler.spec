@@ -1,5 +1,5 @@
 Summary:	'Jump and run' game
-Summary(pl.UTF-8):   Gra z rodzaju 'skacz i biegnij'
+Summary(pl.UTF-8):	Gra z rodzaju 'skacz i biegnij'
 Name:		toppler
 Version:	1.1.2a
 Release:	1
