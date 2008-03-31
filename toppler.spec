@@ -2,13 +2,14 @@ Summary:	'Jump and run' game
 Summary(pl.UTF-8):	Gra z rodzaju 'skacz i biegnij'
 Name:		toppler
 Version:	1.1.3
-Release:	1
+Release:	2
 License:	GPL v2+
 Group:		X11/Applications/Games
 Source0:	http://dl.sourceforge.net/toppler/%{name}-%{version}.tar.gz
 # Source0-md5:	15ee44094e6a4e2a4f5f9b661f3fb617
 Source1:	%{name}.desktop
 Patch0:		%{name}-Makefile.patch
+Patch1:		%{name}-locale.patch
 URL:		http://toppler.sourceforge.net/
 BuildRequires:	SDL-devel >= 1.2
 BuildRequires:	SDL_mixer-devel >= 1.2
@@ -42,6 +43,9 @@ się na ekranie, tak więc widoczne jest tylko 180°.
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
+
+mv -f po/{cz,cs}.po
 
 %build
 %{__gettextize}
