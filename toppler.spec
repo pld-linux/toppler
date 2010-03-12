@@ -1,12 +1,12 @@
 Summary:	'Jump and run' game
 Summary(pl.UTF-8):	Gra z rodzaju 'skacz i biegnij'
 Name:		toppler
-Version:	1.1.3
-Release:	2
+Version:	1.1.4
+Release:	1
 License:	GPL v2+
 Group:		X11/Applications/Games
-Source0:	http://dl.sourceforge.net/toppler/%{name}-%{version}.tar.gz
-# Source0-md5:	15ee44094e6a4e2a4f5f9b661f3fb617
+Source0:	http://downloads.sourceforge.net/toppler/%{name}-%{version}.tar.gz
+# Source0-md5:	6420ae91afdb75d8c6191d4de6e90e88
 Source1:	%{name}.desktop
 Patch0:		%{name}-Makefile.patch
 Patch1:		%{name}-locale.patch
@@ -17,6 +17,7 @@ BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
 BuildRequires:	gettext-devel >= 0.11.5
 BuildRequires:	libstdc++-devel
+BuildRequires:	libtool
 BuildRequires:	zlib-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -49,6 +50,7 @@ mv -f po/{cz,cs}.po
 
 %build
 %{__gettextize}
+%{__libtoolize}
 %{__aclocal}
 %{__autoconf}
 %{__autoheader}
@@ -73,10 +75,10 @@ rm -rf $RPM_BUILD_ROOT
 %files -f %{name}.lang
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README
-%attr(2755,root,games) %{_bindir}/*
+%attr(755,root,root) %{_bindir}/toppler
 %{_datadir}/%{name}
 %{_desktopdir}/%{name}.desktop
-%{_mandir}/man6/%{name}.6*
-%{_pixmapsdir}/%{name}.xpm
-%dir %{_var}/games/%{name}
+%{_mandir}/man6/toppler.6*
+%{_pixmapsdir}/toppler.xpm
+%dir %{_var}/games/toppler
 %attr(664,root,games) %{_var}/games/%{name}/%{name}.hsc
