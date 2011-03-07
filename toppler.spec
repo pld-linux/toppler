@@ -1,15 +1,14 @@
 Summary:	'Jump and run' game
 Summary(pl.UTF-8):	Gra z rodzaju 'skacz i biegnij'
 Name:		toppler
-Version:	1.1.4
+Version:	1.1.5
 Release:	1
 License:	GPL v2+
 Group:		X11/Applications/Games
 Source0:	http://downloads.sourceforge.net/toppler/%{name}-%{version}.tar.gz
-# Source0-md5:	6420ae91afdb75d8c6191d4de6e90e88
+# Source0-md5:	dbd176a1c1e2e0e804b459e8d2cd1fed
 Source1:	%{name}.desktop
 Patch0:		%{name}-Makefile.patch
-Patch1:		%{name}-locale.patch
 URL:		http://toppler.sourceforge.net/
 BuildRequires:	SDL-devel >= 1.2
 BuildRequires:	SDL_mixer-devel >= 1.2
@@ -44,9 +43,6 @@ się na ekranie, tak więc widoczne jest tylko 180°.
 %prep
 %setup -q
 %patch0 -p1
-%patch1 -p1
-
-mv -f po/{cz,cs}.po
 
 %build
 %{__gettextize}
@@ -74,7 +70,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
-%doc AUTHORS ChangeLog NEWS README
+%doc AUTHORS ChangeLog README
 %attr(755,root,root) %{_bindir}/toppler
 %{_datadir}/%{name}
 %{_desktopdir}/%{name}.desktop
