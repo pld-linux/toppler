@@ -14,7 +14,7 @@ BuildRequires:	SDL-devel >= 1.2
 BuildRequires:	SDL_mixer-devel >= 1.2
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
-BuildRequires:	gettext-devel >= 0.11.5
+BuildRequires:	gettext-tools >= 0.11.5
 BuildRequires:	libstdc++-devel
 BuildRequires:	libtool
 BuildRequires:	zlib-devel
