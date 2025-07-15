@@ -42,7 +42,7 @@ się na ekranie, tak więc widoczne jest tylko 180°.
 
 %prep
 %setup -q
-%patch0 -p1
+%patch -P0 -p1
 
 %build
 %{__gettextize}
